@@ -1,0 +1,45 @@
+/* reset.css */
+
+/* 1. Eliminar márgenes y paddings predeterminados */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 2. Establecer estilos por defecto consistentes */
+html, body {
+    height: 100%;
+    font-family: sans-serif;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* 3. Eliminar bordes y estilos de listas, formularios, etc. */
+ul, ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img, video {
+    max-width: 100%;
+    display: block;
+}
+
+/* 4. Botones y campos */
+button, input, select, textarea {
+    font: inherit;
+    background: none;
+    border: none;
+    outline: none;
+}
+
+/* 5. Tablas */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
