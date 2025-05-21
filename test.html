@@ -1,14 +1,17 @@
 <!DOCTYPE html>
-<html lang="es" xmlns="http://www.w3.org/1999/html">
+<html lang="es">
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Layout con Sidebar Expandible</title>
+    <title>Dashboard de Incidentes</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="assets/css/base/reset.css">
     <link rel="stylesheet" href="assets/css/base/menu.css">
     <link rel="stylesheet" href="assets/css/layout/header-footer.css">
     <link rel="stylesheet" href="assets/css/dashboard.css">
+    <link rel="stylesheet" href="assets/css/registrar.css">
+    <link rel="stylesheet" href="assets/css/consulta.css">
+    <link rel="stylesheet" href="assets/css/test.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
@@ -46,25 +49,57 @@
         </header>
 
         <main class="main-content">
-            <div class="dashboar">
-                <div class="box box1">Box 1</div>
-                <div class="box box2">Box 2</div>
-                <div class="box box3">Box 3</div>
-                <div class="box box4">Box 4</div>
-                <div class="box box5">
-                    <div class="card">
-                        <h2>Incidentes por Prioridad</h2>
-                        <canvas id="pieChart"></canvas>
-                    </div>
-                </div>
-                <div class="box box6">
-                    <div class="card">
-                        <h2>Incidentes por Día</h2>
-                        <canvas id="barChart"></canvas>
-                    </div>
-                </div>
-                <div class="box box7">Box 7</div>
+            <h2>Registros más Recientes</h2>
+            <!-- Totales por estado -->
+            <div class="totals">
+                <div class="total-card"><strong>Críticos:</strong> 5</div>
+                <div class="total-card"><strong>Alta:</strong> 12</div>
+                <div class="total-card"><strong>Abiertos:</strong> 18</div>
+                <div class="total-card"><strong>Resueltos:</strong> 10</div>
             </div>
+
+            <!-- Gráficas -->
+            <div class="dashboard">
+                <div class="card">
+                    <h2>Incidentes por Prioridad</h2>
+                    <canvas id="pieChart"></canvas>
+                </div>
+                <div class="card">
+                    <h2>Incidentes por Día</h2>
+                    <canvas id="barChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Tabla de registros -->
+            <h2>Registros más Recientes</h2>
+            <table>
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Solicitante</th>
+                    <th>Fecha</th>
+                    <th>Prioridad</th>
+                    <th>Estado</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>001</td>
+                    <td>Juan Pérez</td>
+                    <td>2025-05-19</td>
+                    <td>Alta</td>
+                    <td>Abierto</td>
+                </tr>
+                <tr>
+                    <td>002</td>
+                    <td>Ana Gómez</td>
+                    <td>2025-05-19</td>
+                    <td>Crítica</td>
+                    <td>Resuelto</td>
+                </tr>
+                <!-- Puedes agregar más registros aquí -->
+                </tbody>
+            </table>
         </main>
 
         <footer>
@@ -72,7 +107,6 @@
         </footer>
     </div>
 </div>
-</body>
 <script><!-- Script para las gráficas -->
 const pieCtx = document.getElementById('pieChart').getContext('2d');
 new Chart(pieCtx, {
@@ -115,4 +149,5 @@ new Chart(barCtx, {
     }
 });
 </script>
+</body>
 </html>

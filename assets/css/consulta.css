@@ -1,0 +1,101 @@
+.filtros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    width: 90%;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    margin-bottom: 1.5rem;
+    margin-top: 2rem;
+}
+
+.filtro {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 200px;
+}
+
+.filtro label {
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+}
+
+.filtro input,
+.filtro select {
+    padding: 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 0.95rem;
+}
+
+.tabla-container {
+    overflow-x: auto;
+    width: 90%;
+    height: 100%;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    overflow: hidden;
+}
+
+.tabla-encabezado th {
+    text-align: center;
+    padding: 0.5rem;
+}
+
+th, td {
+    text-align: center;
+    vertical-align: middle;
+    padding: 0.9rem;
+    border-bottom: 1px solid #eee;
+}
+
+th {
+    background-color: #e5e7eb;
+    font-weight: bold;
+}
+
+td:last-child {
+    white-space: nowrap;
+}
+
+.acciones-contenedor {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.acciones button {
+    margin: 0.5rem;
+    padding: 0.4rem 0.7rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+
+.detalles {
+    background-color: #3b82f6;
+    color: white;
+    width: 20%;
+}
+
+.atender {
+    background-color: #10b981;
+    color: white;
+    width: 20%;
+}
+
+.imprimir {
+    background-color: #f59e0b;
+    color: white;
+    width: 20%;
+}
