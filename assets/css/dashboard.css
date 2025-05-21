@@ -1,67 +1,39 @@
-.dashboar {
-    display: grid;
-    height: 100%;
-    margin: 3rem;
-    grid-template-columns: repeat(4, 0.5fr); /* 3 columnas iguales */
-    grid-template-rows: auto auto auto; /* 3 filas, altura automática */
-    column-gap:0.25rem;
-    row-gap:0.5rem;
-    padding: 0;
-}
-
-/* Cada caja toma su posición específica */
-.box1 {
-    grid-column: 1 / 2;
-    grid-row: 1;
-}
-.box2 {
-    grid-column: 2 / 3;
-    grid-row: 1;
-}
-.box3 {
-    grid-column: 3 / 4;
-    grid-row: 1;
-}
-
-.box4 {
-    grid-column: 4 / 5; /* Ocupa las 3 columnas */
-    grid-row: 1;
-}
-
-.box5 {
-    grid-column: 1 / 3; /* Ocupa las 3 columnas */
-    grid-row: 2;
-}
-
-.box6 {
-    grid-column: 3 / 5; /* Ocupa las 3 columnas */
-    grid-row: 2;
-}
-
-.box7 {
-    grid-column: 1 / 5; /* Ocupa las 3 columnas */
-    grid-row: 3;
-}
-
-/* Estilo opcional para visualizar */
-.box {
-    border: 2px solid black;
+.main-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
     padding: 1rem;
-    text-align: center;
+    height: 100vh; /* ocupa toda la pantalla */
+    flex-direction: column;
 }
 
 .dashboard {
     display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .card {
     display: flex;
+    flex-direction: column;      /* Para que los elementos queden en columna */
+    justify-content: center;     /* Centra verticalmente */
+    align-items: center;
+
+    flex: 1 1 48%; /* 2 tarjetas por fila en pantallas grandes */
     background: white;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    height: 100%;
-    width: 100%;
+    box-sizing: border-box;
+}
+
+.card #pieChart{
+    width: 40% !important;
+    height: auto !important;
+    max-width: 100%;
 }
 
 .totals {
@@ -95,11 +67,4 @@ th, td {
 
 th {
     background: #f0f0f0;
-}
-
-.box5{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }

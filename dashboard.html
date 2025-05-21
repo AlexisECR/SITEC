@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Layout con Sidebar Expandible</title>
+    <title>Dashboard</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="assets/css/base/reset.css">
     <link rel="stylesheet" href="assets/css/base/menu.css">
     <link rel="stylesheet" href="assets/css/layout/header-footer.css">
     <link rel="stylesheet" href="assets/css/dashboard.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="assets/js/login.js"></script>
 </head>
 <body>
 <div class="wrapper">
-    <!-- Sidebar -->
+    <!-- Menu-->
     <aside class="sidebar">
         <nav>
             <div class="menu-title">Menú</div>
@@ -21,11 +22,11 @@
                 <i class="fa-solid fa-house icon"></i>
                 <span class="label">Inicio</span>
             </a>
-            <a href="#" class="nav-item">
+            <a href="registrar.html" class="nav-item">
                 <i class="fa-solid fa-bug icon"></i>
                 <span class="label">Reportar</span>
             </a>
-            <a href="#" class="nav-item">
+            <a href="consulta.html" class="nav-item">
                 <i class="fa-solid fa-magnifying-glass icon"></i>
                 <span class="label">Consultar</span>
             </a>
@@ -36,35 +37,69 @@
         </nav>
     </aside>
 
-    <!-- Todo el contenido desplazable -->
     <div class="content-area">
-        <header>
+        <header class="header">
             <div class="container">
                 <h1 class="logo">SITEC</h1>
-                <input id="search" type="text"></input>
+                <div class="header-right">
+                    <input id="search" type="text" placeholder="Buscar..."/>
+                    <div class="menu-wrapper">
+                        <i class="fa-solid fa-bars menu-icon"></i>
+                        <div class="dropdown-menu" id="dropdown">
+                            <a href="a">Cerrar sesión</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </header>
 
+
         <main class="main-content">
-            <div class="dashboar">
-                <div class="box box1">Box 1</div>
-                <div class="box box2">Box 2</div>
-                <div class="box box3">Box 3</div>
-                <div class="box box4">Box 4</div>
-                <div class="box box5">
-                    <div class="card">
-                        <h2>Incidentes por Prioridad</h2>
-                        <canvas id="pieChart"></canvas>
-                    </div>
-                </div>
-                <div class="box box6">
-                    <div class="card">
-                        <h2>Incidentes por Día</h2>
-                        <canvas id="barChart"></canvas>
-                    </div>
-                </div>
-                <div class="box box7">Box 7</div>
+            <div class="totals">
+                <div class="total-card"><strong>Críticos:</strong> 5</div>
+                <div class="total-card"><strong>Alta:</strong> 12</div>
+                <div class="total-card"><strong>Abiertos:</strong> 18</div>
+                <div class="total-card"><strong>Resueltos:</strong> 10</div>
             </div>
+
+            <div class="dashboard">
+                <div class="card circular-graph">
+                    <h2>Incidentes por Prioridad</h2>
+                    <canvas id="pieChart"></canvas>
+                </div>
+                <div class="card bar-graph">
+                    <h2>Incidentes por Día</h2>
+                    <canvas id="barChart"></canvas>
+                </div>
+            </div>
+            <h2>Registros más Recientes</h2>
+            <table>
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Solicitante</th>
+                    <th>Fecha</th>
+                    <th>Prioridad</th>
+                    <th>Estado</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>001</td>
+                    <td>Juan Pérez</td>
+                    <td>2025-05-19</td>
+                    <td>Alta</td>
+                    <td>Abierto</td>
+                </tr>
+                <tr>
+                    <td>002</td>
+                    <td>Ana Gómez</td>
+                    <td>2025-05-19</td>
+                    <td>Crítica</td>
+                    <td>Resuelto</td>
+                </tr>
+                </tbody>
+            </table>
         </main>
 
         <footer>

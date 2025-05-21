@@ -15,17 +15,17 @@ html, body {
 }
 
 .sidebar {
-    width: 60px;
+    width: 185px;
     background-color: #0f2335;
     color: white;
-    transition: width 0.3s ease;
-    overflow: hidden;
+    /*transition: width 0.3s ease;
+    overflow: hidden;*/
 }
-
+/*
 .sidebar:hover {
     width: 240px;
 }
-
+*/
 .content-area {
     flex-grow: 1;
     display: flex;
@@ -43,8 +43,8 @@ main {
     font-weight: bold;
     padding: 1rem;
     text-align: center;
-    transition: opacity 0.3s;
-    opacity: 0;
+   /* transition: opacity 0.3s;
+    opacity: 0;*/
 }
 
 .nav-item {
@@ -66,11 +66,11 @@ main {
 }
 
 .label {
-    opacity: 0;
-    transition: opacity 0.3s;
+   /* opacity: 0;
+    transition: opacity 0.3s;*/
     white-space: nowrap;
 }
-
+/*
 .sidebar:hover .menu-title {
     opacity: 1;
 }
@@ -78,7 +78,7 @@ main {
 .sidebar:hover .label{
     opacity: 1;
 }
-
+*/
 .container {
     margin: 0 6rem 0 2rem;
     display: flex;
@@ -105,18 +105,68 @@ main {
     font-weight: 500;
 }
 
- .main-content{
-     height: 100vh; /* ocupa toda la pantalla */
-     display: flex; /* para que sus hijos puedan expandirse */
-     flex-direction: column;
-     padding: 0.5rem;
- }
+.main-content{
+    height: 100vh; /* ocupa toda la pantalla */
+    display: flex; /* para que sus hijos puedan expandirse */
+    flex-direction: column;
+    padding: 0.5rem;
+}
 
- #search{
-      padding: 0.5rem;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      background-color: white;
-  }
+#search{
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: white;
+}
 
+.header {
+    color: white;
+    padding: 1rem 0;
+}
 
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.menu-wrapper {
+    position: relative;
+}
+
+.menu-icon {
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: white;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 2rem;
+    right: 0;
+    background-color: white;
+    color: black;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    min-width: 150px;
+    z-index: 100;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 0.75rem 1rem;
+    text-decoration: none;
+    color: black;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f3f4f6;
+}
