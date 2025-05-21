@@ -1,5 +1,6 @@
 .dashboard {
     display: grid;
+    height: 100%;
     grid-template-columns: repeat(4, 0.5fr); /* 3 columnas iguales */
     grid-template-rows: auto auto auto; /* 3 filas, altura automática */
     column-gap:0.25rem;
