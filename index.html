@@ -9,23 +9,25 @@
     <title>Login</title>
 </head>
 <body>
-<div class="login-container">
-    <h2>Iniciar Sesión</h2>
-    <form id="loginForm">
-        <div class="form-group">
-            <label for="username">Usuario</label>
-            <input type="text" id="username" name="username" required minlength="4" maxlength="20">
-        </div>
-        <div class="form-group">
-            <label for="password">Contraseña</label>
-            <input type="password" id="password" name="password" required minlength="8"
-                   pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+">
-        </div>
-        <button type="submit" class="btn" onclick="loginWithGoogle()">Ingresar</button>
-        <div class="error-message" id="errorMessage"></div>
-    </form>
-    <div class="separator">o</div>
-    <button class="btn google-btn" onclick="loginWithGoogle()">Ingresar con Google</button>
+<div class="login">
+    <div class="login-container">
+        <h2>Iniciar Sesión</h2>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="username">Usuario</label>
+                <input type="text" id="username" name="username" required minlength="4" maxlength="20">
+            </div>
+            <div class="form-group">
+                <label for="password">Contraseña</label>
+                <input type="password" id="password" name="password" required minlength="8"
+                       pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+">
+            </div>
+            <button type="submit" class="btn" onclick="loginWithGoogle()">Ingresar</button>
+            <div class="error-message" id="errorMessage"></div>
+        </form>
+        <div class="separator">o</div>
+        <button class="btn google-btn" onclick="loginWithGoogle()">Ingresar con Google</button>
+    </div>
 </div>
 </body>
 </html>

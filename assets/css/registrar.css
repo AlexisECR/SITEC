@@ -1,18 +1,11 @@
-.main-content{
-    display: flex;
-    justify-content: center;  /* Centra horizontalmente */
-    align-items: center;      /* Centra verticalmente */
-    margin: 0;
-    height: 100%;
-}
-
 .form-container {
-    background: white;
     padding: 2rem;
     border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    box-sizing: border-box;
     max-width: 100%;
     width: 80%;
+    background: white;
 }
 
 h2 {
@@ -32,9 +25,9 @@ h2 {
 }
 
 label {
-    font-weight: 600;
     margin-bottom: 0.4rem;
     color: #444;
+    font-weight: 600;
 }
 
 input,
@@ -43,6 +36,7 @@ textarea {
     padding: 0.7rem;
     border: 1px solid #ccc;
     border-radius: 5px;
+    box-sizing: border-box;
     font-size: 0.95rem;
     transition: border 0.3s ease;
 }
@@ -66,12 +60,13 @@ textarea {
 button {
     margin-top: 1.5rem;
     padding: 0.9rem;
-    background-color: #3b82f6;
-    color: white;
     border: none;
     border-radius: 5px;
+    box-sizing: border-box;
     font-size: 1rem;
     font-weight: bold;
+    background-color: #3b82f6;
+    color: white;
     cursor: pointer;
     transition: background-color 0.3s;
 }
@@ -80,24 +75,10 @@ button:hover {
     background-color: #2563eb;
 }
 
-.btn-guardar{
+.btn-guardar {
     width: 10rem;
 }
 
 #archivo {
     width: 25rem;
-}
-
-/* Responsivo: tablets */
-@media (max-width: 1024px) {
-    .form-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
-/* Responsivo: móviles */
-@media (max-width: 640px) {
-    .form-grid {
-        grid-template-columns: 1fr;
-    }
 }

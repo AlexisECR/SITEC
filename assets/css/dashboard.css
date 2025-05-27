@@ -1,62 +1,54 @@
-.main-content{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    padding: 1rem;
-    height: 100vh; /* ocupa toda la pantalla */
-    flex-direction: column;
-}
-
 .dashboard {
+    box-sizing: border-box;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
-    width: 100%;
-    box-sizing: border-box;
 }
 
 .card {
-    display: flex;
-    flex-direction: column;      /* Para que los elementos queden en columna */
-    justify-content: center;     /* Centra verticalmente */
-    align-items: center;
-
-    flex: 1 1 48%; /* 2 tarjetas por fila en pantallas grandes */
-    background: white;
+    box-sizing: border-box;
     padding: 20px;
     border-radius: 10px;
+    background: white;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    box-sizing: border-box;
+
+    flex: 1 1 48%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.card #pieChart{
+.card #pieChart {
+    max-width: 100%;
     width: 40% !important;
     height: auto !important;
-    max-width: 100%;
 }
 
 .totals {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
     margin-bottom: 20px;
     width: 100%;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .total-card {
-    flex: 1;
-    background: #fff;
     padding: 10px 20px;
     border-left: 5px solid #007bff;
     border-radius: 6px;
+    background: #fff;
+
+    flex: 1;
 }
 
 table {
     width: 100%;
+    margin-top: 20px;
     border-collapse: collapse;
     background: white;
-    margin-top: 20px;
 }
 
 th, td {

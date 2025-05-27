@@ -1,4 +1,4 @@
-.filtros {
+.filters {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
@@ -11,19 +11,19 @@
     margin-top: 2rem;
 }
 
-.filtro {
+.filter {
     display: flex;
     flex-direction: column;
     flex: 1 1 200px;
 }
 
-.filtro label {
+.filter label {
     font-weight: 600;
     margin-bottom: 0.3rem;
 }
 
-.filtro input,
-.filtro select {
+.filter input,
+.filter select {
     padding: 0.6rem;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -66,14 +66,14 @@ td:last-child {
     white-space: nowrap;
 }
 
-.acciones-contenedor {
+.actions-container{
     display: flex;
     gap: 0.5rem;
     justify-content: center;
     flex-wrap: wrap;
 }
 
-.acciones button {
+.actions button {
     margin: 0.5rem;
     padding: 0.4rem 0.7rem;
     border: none;
@@ -82,19 +82,19 @@ td:last-child {
     cursor: pointer;
 }
 
-.detalles {
+.details {
     background-color: #3b82f6;
     color: white;
     width: 20%;
 }
 
-.atender {
+.attend {
     background-color: #10b981;
     color: white;
     width: 20%;
 }
 
-.imprimir {
+.print {
     background-color: #f59e0b;
     color: white;
     width: 20%;

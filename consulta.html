@@ -6,10 +6,7 @@
     <title>Registrar</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="assets/css/base/reset.css">
-    <link rel="stylesheet" href="assets/css/base/menu.css">
-    <link rel="stylesheet" href="assets/css/layout/header-footer.css">
-    <link rel="stylesheet" href="assets/css/dashboard.css">
-    <link rel="stylesheet" href="assets/css/registrar.css">
+    <link rel="stylesheet" href="assets/css/base/base.css">
     <link rel="stylesheet" href="assets/css/consulta.css">
 
 </head>
@@ -40,7 +37,7 @@
 
     <div class="content-area">
         <header class="header">
-            <div class="container">
+            <div class="container-header">
                 <h1 class="logo">SITEC</h1>
                 <div class="header-right">
                     <input id="search" type="text" placeholder="Buscar..."/>
@@ -55,8 +52,8 @@
         </header>
 
         <main class="main-content">
-            <div class="filtros">
-                <div class="filtro">
+            <div class="filters">
+                <div class="filter">
                     <label for="estado">Estado</label>
                     <select id="estado">
                         <option value="">Todos</option>
@@ -66,17 +63,17 @@
                     </select>
                 </div>
 
-                <div class="filtro">
+                <div class="filter">
                     <label for="desde">Desde</label>
                     <input type="date" id="desde"/>
                 </div>
 
-                <div class="filtro">
+                <div class="filter">
                     <label for="hasta">Hasta</label>
                     <input type="date" id="hasta"/>
                 </div>
 
-                <div class="filtro">
+                <div class="filter">
                     <label for="buscar-id">Buscar por ID</label>
                     <input type="text" id="buscar-id" placeholder="Ingrese ID..."/>
                 </div>
@@ -101,11 +98,11 @@
                         <td>2025-05-18</td>
                         <td>Alta</td>
                         <td>Cerrado</td>
-                        <td class="acciones">
-                            <div class="acciones-contenedor">
-                                <button class="detalles">Detalles</button>
-                                <button class="atender">Atender</button>
-                                <button class="imprimir">Imprimir</button>
+                        <td class="actions">
+                            <div class="actions-container">
+                                <button class="details">Detalles</button>
+                                <button class="attend">Atender</button>
+                                <button class="print">Imprimir</button>
                             </div>
                         </td>
                     </tr>
@@ -115,15 +112,14 @@
                         <td>2025-05-19</td>
                         <td>Media</td>
                         <td>Cerrado</td>
-                        <td class="acciones">
-                            <div class="acciones-contenedor">
-                                <button class="detalles">Detalles</button>
-                                <button class="atender">Atender</button>
-                                <button class="imprimir">Imprimir</button>
+                        <td class="actions">
+                            <div class="actions-container">
+                                <button class="details">Detalles</button>
+                                <button class="attend">Atender</button>
+                                <button class="print">Imprimir</button>
                             </div>
                         </td>
                     </tr>
-                    <!-- Puedes agregar más filas aquí -->
                     </tbody>
                 </table>
             </div>
