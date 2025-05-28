@@ -1,0 +1,86 @@
+<div class="form-container">
+    <form id="form-incidente" action="/guardar-incidente" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+        </div>
+
+        <div class="form-group">
+            <label for="correo">Correo electrónico:</label>
+            <input type="email" id="correo" name="correo" required>
+        </div>
+
+        <div class="form-group">
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" id="telefono" name="telefono">
+        </div>
+
+        <div class="form-group">
+            <label>Tipo de incidente:</label>
+            <div class="option-radio">
+                <label>
+                    <input type="radio" name="tipo_incidente" value="equipo" required>
+                    Equipo de cómputo
+                </label>
+                <label>
+                    <input type="radio" name="tipo_incidente" value="red">
+                    Red
+                </label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="departamento">Departamento:</label>
+            <select id="departamento" name="departamento" required>
+                <option value="">Seleccione...</option>
+                <option value="sistemas">Sistemas</option>
+                <option value="recursos_humanos">Recursos Humanos</option>
+                <option value="finanzas">Finanzas</option>
+                <option value="logistica">Logística</option>
+                <option value="otro">Otro</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="fecha">Fecha del incidente:</label>
+            <input type="date" id="fecha" name="fecha" required>
+        </div>
+
+        <div class="form-group checkbox-container">
+            <label>Equipos afectados:</label>
+            <div class="option-checkbox">
+                <label>
+                    <input type="checkbox" name="equipo[]" value="pc">
+                    PC
+                </label>
+                <label>
+                    <input type="checkbox" name="equipo[]" value="impresora">
+                    Impresora
+                </label>
+                <label>
+                    <input type="checkbox" name="equipo[]" value="switch">
+                    Switch
+                </label>
+                <label>
+                    <input type="checkbox" name="equipo[]" value="router">
+                    Router
+                </label>
+            </div>
+        </div>
+
+        <div class="form-group text-area">
+            <label for="descripcion">Descripción del incidente:</label>
+            <textarea id="descripcion" name="descripcion" rows="5" cols="40" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="archivo">Adjuntar archivo:</label>
+            <input type="file" id="archivo" name="archivo">
+        </div>
+
+        <div class="form-group btn-save">
+            <button class="btn-guardar" id="btn-guardar" type="button">Guardar</button>
+        </div>
+    </form>
+
+</div>

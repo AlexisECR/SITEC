@@ -1,33 +1,58 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" xmlns="http://www.w3.org/1999/html">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/base/reset.css">
-    <link rel="stylesheet" href="assets/css/login.css">
-    <script src="assets/js/login.js"></script>
-    <title>Login</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/base/base.css"/>
+    <link rel="stylesheet" href="assets/css/base/reset.css"/>
+    <link rel="stylesheet" href="assets/css/layout/consulta.css"/>
+    <link rel="stylesheet" href="assets/css/layout/dashboard.css"/>
+    <link rel="stylesheet" href="assets/css/layout/registrar.css"/>
+    <link rel="stylesheet" href="assets/css/layout/login.css"/>
 </head>
 <body>
-<div class="login">
-    <div class="login-container">
-        <h2>Iniciar Sesión</h2>
-        <form id="loginForm">
-            <div class="form-group">
-                <label for="username">Usuario</label>
-                <input type="text" id="username" name="username" required minlength="4" maxlength="20">
+<div class="wrapper" id="wrapper">
+    <aside class="sidebar" id="sidebar">
+        <nav>
+            <div class="menu-title">Menú</div>
+            <a href="#" class="nav-item" onclick="cargarPagina('dashboard')">
+                <i class="fa-solid fa-house icon"></i>
+                <span class="label">Inicio</span>
+            </a>
+            <a href="#" class="nav-item" onclick="cargarPagina('registrar')">
+                <i class="fa-solid fa-bug icon"></i>
+                <span class="label">Reportar</span>
+            </a>
+            <a href="#" class="nav-item" onclick="cargarPagina('consulta')">
+                <i class="fa-solid fa-magnifying-glass icon"></i>
+                <span class="label">Consultar</span>
+            </a>
+        </nav>
+    </aside>
+    <div class="content-area" id="content-area">
+        <header class="header" id="header">
+            <div class="container-header">
+                <h1 class="logo">SITEC</h1>
+                <div class="header-right">
+                    <input id="search" type="text" placeholder="Buscar..."/>
+                    <div class="menu-wrapper">
+                        <i class="fa-solid fa-bars menu-icon"></i>
+                        <div class="dropdown-menu" id="dropdown">
+                            <a href="a">Cerrar sesión</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="password">Contraseña</label>
-                <input type="password" id="password" name="password" required minlength="8"
-                       pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+">
-            </div>
-            <button type="submit" class="btn" onclick="loginWithGoogle()">Ingresar</button>
-            <div class="error-message" id="errorMessage"></div>
-        </form>
-        <div class="separator">o</div>
-        <button class="btn google-btn" onclick="loginWithGoogle()">Ingresar con Google</button>
+        </header>
+        <main class="main-content" id="main-content">
+        </main>
+        <footer id="footer">
+            <p>&copy; 2025 Sistema de Incidencias Tecnológicas | Todos los derechos reservados</p>
+        </footer>
     </div>
 </div>
+<script src="assets/js/core/main.js"></script>
 </body>
 </html>

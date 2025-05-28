@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/base/base.css"/>
+    <link rel="stylesheet" href="assets/css/base/reset.css"/>
+    <link rel="stylesheet" href="assets/css/layout/consulta.css"/>
+    <link rel="stylesheet" href="assets/css/layout/dashboard.css"/>
+    <link rel="stylesheet" href="assets/css/layout/registrar.css"/>
+    <link rel="stylesheet" href="assets/css/layout/login.css"/>
+</head>
+<body>
+<div class="wrapper" id="wrapper">
+    <aside class="sidebar" id="sidebar">
+        <nav>
+            <div class="menu-title">Menú</div>
+            <a href="#" class="nav-item" onclick="cargarPagina('dashboard')">
+                <i class="fa-solid fa-house icon"></i>
+                <span class="label">Inicio</span>
+            </a>
+            <a href="#" class="nav-item" onclick="cargarPagina('registrar')">
+                <i class="fa-solid fa-bug icon"></i>
+                <span class="label">Reportar</span>
+            </a>
+            <a href="#" class="nav-item" onclick="cargarPagina('consulta')">
+                <i class="fa-solid fa-magnifying-glass icon"></i>
+                <span class="label">Consultar</span>
+            </a>
+        </nav>
+    </aside>
+    <div class="content-area" id="content-area">
+        <header class="header" id="header">
+            <div class="container-header">
+                <h1 class="logo">SITEC</h1>
+                <div class="header-right">
+                    <input id="search" type="text" placeholder="Buscar..."/>
+                    <div class="menu-wrapper">
+                        <i class="fa-solid fa-bars menu-icon"></i>
+                        <div class="dropdown-menu" id="dropdown">
+                            <a href="a">Cerrar sesión</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main class="main-content" id="main-content">
+            <div class="form-container">
+                <form action="/reportar-incidente" method="post" enctype="multipart/form-data">
+                    <h2>Formulario de Reporte de Incidente Tecnológico</h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="nombre">Nombre:</label>
+                            <input type="text" id="nombre" name="nombre">
+                        </div>
+                        <div class="form-group">
+                            <label for="correo">Correo electrónico:</label>
+                            <input type="text" id="correo" name="correo">
+                        </div>
+                        <div class="form-group">
+                            <label for="telefono">Telefono:</label>
+                            <input type="text" id="telefono" name="telefono">
+                        </div>
+                        <div class="form-group ">
+                            <label>Tipo de incidente:</label>
+                            <div class="option-radio">
+                                <label>
+                                    <input type="radio" name="tipo_incidente" value="equipo" required>
+                                    Equipo de cómputo
+                                </label>
+                                <label>
+                                    <input type="radio" name="tipo_incidente" value="red">
+                                    Red
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="departamento">Departamento:</label>
+                            <select id="departamento" name="departamento" required>
+                                <option value="">Seleccione...</option>
+                                <option value="sistemas">Sistemas</option>
+                                <option value="recursos_humanos">Recursos Humanos</option>
+                                <option value="finanzas">Finanzas</option>
+                                <option value="logistica">Logística</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="fecha">Fecha del incidente:</label>
+                            <input type="date" id="fecha" name="fecha" required>
+                        </div>
+                        <div class="form-group checkbox-container">
+                            <label>Equipos afectados:</label>
+                            <div class="option-checkbox">
+                                <label>
+                                    <input type="checkbox" name="equipo[]" value="pc">
+                                    PC
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="equipo[]" value="impresora">
+                                    Impresora
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="equipo[]" value="switch">
+                                    Switch
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="equipo[]" value="router">
+                                    Router
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group text-area" >
+                            <label for="descripcion">Descripción del incidente:</label>
+                            <textarea id="descripcion" name="descripcion" rows="5" cols="40" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="archivo">Adjuntar archivo</label>
+                            <input type="file" id="archivo" name="archivo">
+                        </div>
+                        <div class="form-group btn-save" >
+                            <button class="btn-guardar" id="btn-guardar" type="button">Guardar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </main>
+        <footer id="footer">
+            <p>&copy; 2025 Sistema de Incidencias Tecnológicas | Todos los derechos reservados</p>
+        </footer>
+    </div>
+</div>
+</body>
+<script>
+    document.getElementById("btn-guardar").addEventListener("click", function () {
+        const data = {
+            nombre: document.getElementById("nombre")?.value.trim() || "",
+            correo: document.getElementById("correo")?.value.trim() || "",
+            telefono: document.getElementById("telefono")?.value.trim() || "",
+            tipo_incidente: document.querySelector('input[name="tipo_incidente"]:checked')?.value || "",
+            departamento: document.getElementById("departamento")?.value || "",
+            fecha: document.getElementById("fecha")?.value || "",
+            equipo: Array.from(document.querySelectorAll('input[name="equipo[]"]:checked')).map(cb => cb.value),
+            descripcion: document.getElementById("descripcion")?.value.trim() || ""
+        };
+
+        console.log("Formulario en JSON:");
+        console.log(JSON.stringify(data, null, 2));
+    });
+</script>
+</html>

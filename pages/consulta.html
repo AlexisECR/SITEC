@@ -1,0 +1,71 @@
+<div class="filters">
+    <div class="filter">
+        <label for="estado">Estado</label>
+        <select id="estado">
+            <option value="">Todos</option>
+            <option>Abierto</option>
+            <option>Cerrado</option>
+            <option>Espera</option>
+        </select>
+    </div>
+
+    <div class="filter">
+        <label for="desde">Desde</label>
+        <input type="date" id="desde"/>
+    </div>
+
+    <div class="filter">
+        <label for="hasta">Hasta</label>
+        <input type="date" id="hasta"/>
+    </div>
+
+    <div class="filter">
+        <label for="buscar-id">Buscar por ID</label>
+        <input type="text" id="buscar-id" placeholder="Ingrese ID..."/>
+    </div>
+</div>
+
+<div class="tabla-container">
+    <table>
+        <thead class="tabla-encabezado">
+        <tr>
+            <th>ID</th>
+            <th>Solicitante</th>
+            <th>Fecha</th>
+            <th>Prioridad</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>00123</td>
+            <td>Juan Pérez</td>
+            <td>2025-05-18</td>
+            <td>Alta</td>
+            <td>Cerrado</td>
+            <td class="actions">
+                <div class="actions-container">
+                    <button class="details">Detalles</button>
+                    <button class="attend">Atender</button>
+                    <button class="print">Imprimir</button>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>00124</td>
+            <td>Ana Gómez</td>
+            <td>2025-05-19</td>
+            <td>Media</td>
+            <td>Cerrado</td>
+            <td class="actions">
+                <div class="actions-container">
+                    <button class="details">Detalles</button>
+                    <button class="attend">Atender</button>
+                    <button class="print">Imprimir</button>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
