@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Validación de Nombre</title>
+    <style>
+        .form-group {
+            margin-bottom: 1em;
+        }
+
+        .error {
+            color: red;
+            font-size: 0.9em;
+            margin-top: 0.3em;
+        }
+
+        .input-error {
+            border: 2px solid red;
+        }
+    </style>
+</head>
+<body>
+
+<form id="miFormulario">
+    <div class="form-group">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre">
+        <div id="error-nombre" class="error"></div>
+    </div>
+
+    <button type="submit">Enviar</button>
+</form>
+
+<script>
+    document.getElementById("miFormulario").addEventListener("submit", function (e) {
+        e.preventDefault(); // Evita envío automático
+
+        const nombreInput = document.getElementById("nombre");
+        const errorDiv = document.getElementById("error-nombre");
+
+        // Limpiar errores anteriores
+        errorDiv.textContent = "";
+        nombreInput.classList.remove("input-error");
+
+        // Validar
+        if (nombreInput.value.trim() === "") {
+            errorDiv.textContent = "El campo nombre es obligatorio.";
+            nombreInput.classList.add("input-error");
+            nombreInput.focus();
+        } else {
+            alert("Formulario válido. Enviando datos...");
+            // Aquí podrías enviar los datos o resetear el formulario
+        }
+    });
+</script>
+
+</body>
+</html>

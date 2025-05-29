@@ -16,9 +16,8 @@ function cargarPagina(pagina) {
             document.getElementById("footer").style.display = mostrar ? "block" : "none";
 
             if (pagina === "dashboard") {
-                // Verifica si Chart.js ya está cargado
-                const yaTieneChart = document.querySelector('script[src="https://cdn.jsdelivr.net/npm/chart.js"]');
-                if (!yaTieneChart) {
+                const existeChart = document.querySelector('script[src="https://cdn.jsdelivr.net/npm/chart.js"]');
+                if (!existeChart) {
                     const chartScript = document.createElement("script");
                     chartScript.src = "https://cdn.jsdelivr.net/npm/chart.js";
                     chartScript.defer = true;
@@ -34,8 +33,8 @@ function cargarPagina(pagina) {
                     document.body.appendChild(chartScript);
                 } else {
                     // Chart.js ya está, solo agregamos dashboard.js si no existe
-                    const yaTieneDashboard = document.querySelector('script[src="assets/js/pages/dashboard.js"]');
-                    if (!yaTieneDashboard) {
+                    const existeDashboard = document.querySelector('script[src="assets/js/pages/dashboard.js"]');
+                    if (!existeDashboard) {
                         const scriptLocal = document.createElement("script");
                         scriptLocal.src = "assets/js/pages/dashboard.js";
                         scriptLocal.defer = true;
