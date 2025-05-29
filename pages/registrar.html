@@ -10,10 +10,12 @@
             <div class="form-group">
                 <label for="correo">Correo electrónico:</label>
                 <input type="email" id="correo" name="correo" required>
+                <div id="error-correo" class="error"></div>
             </div>
             <div class="form-group">
                 <label for="telefono">Teléfono:</label>
                 <input type="tel" id="telefono" name="telefono">
+                <div id="error-telefono" class="error"></div>
             </div>
             <div class="form-group">
                 <label>Tipo de incidente:</label>
@@ -27,6 +29,7 @@
                         Red
                     </label>
                 </div>
+                <div id="error-incidente" class="error"></div>
             </div>
             <div class="form-group">
                 <label for="departamento">Departamento:</label>
@@ -38,10 +41,12 @@
                     <option value="logistica">Logística</option>
                     <option value="otro">Otro</option>
                 </select>
+                <div id="error-departamento" class="error"></div>
             </div>
             <div class="form-group">
                 <label for="fecha">Fecha del incidente:</label>
                 <input type="date" id="fecha" name="fecha" required>
+                <div id="error-fecha" class="error"></div>
             </div>
             <div class="form-group checkbox-container">
                 <label>Equipos afectados:</label>
@@ -63,14 +68,17 @@
                         Router
                     </label>
                 </div>
+                <div id="error-checkbox" class="error"></div>
             </div>
             <div class="form-group text-area">
                 <label for="descripcion">Descripción del incidente:</label>
                 <textarea id="descripcion" name="descripcion" rows="5" cols="40" required></textarea>
+                    <div id="error-descripcion" class="error"></div>
             </div>
             <div class="form-group">
                 <label for="archivo">Adjuntar archivo:</label>
                 <input type="file" id="archivo" name="archivo">
+                <div id="error-archivo" class="error"></div>
             </div>
             <div class="form-group btn-save">
                 <button class="btn-guardar" id="btn-guardar" type="button">Guardar</button>
