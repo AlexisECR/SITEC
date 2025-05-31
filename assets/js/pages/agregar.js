@@ -5,18 +5,18 @@ document.getElementById("main-content").addEventListener("click", (e) => {
         let registroValido = true;
 
         const camposAValidar = [
-            {campoId: "nombre", errorId: "error-nombre", mensaje: "El campo nombre es obligatorio."},
+            {campoId: "prioridad", errorId: "error-prioridad", mensaje: "Se debe seleccionar una prioridad."},
             {campoId: "correo", errorId: "error-correo", mensaje: "El campo correo es obligatorio."},
             {campoId: "telefono", errorId: "error-telefono", mensaje: "El campo teléfono es obligatorio."},
-            {campoId: "departamento", errorId: "error-departamento", mensaje: "El campo departamento es obligatorio."},
+            {campoId: "tecnico", errorId: "errorTecnico", mensaje: "Se debe seleccionar un Técnico."},
             {campoId: "fecha", errorId: "error-fecha", mensaje: "El campo fecha es obligatorio."},
             {campoId: "descripcion", errorId: "error-descripcion", mensaje: "El campo descripción es obligatorio."}
         ];
 
-        const tipo_incidente = document.querySelector('input[name="tipo_incidente"]:checked');
-        const errorIncidente = document.getElementById("error-incidente");
+        const categoria = document.querySelector('input[name="categoria"]:checked');
+        const errorCategoria = document.getElementById("errorCategoria");
 
-        const equipo = Array.from(document.querySelectorAll('input[name="equipo[]"]:checked'));
+        const  equipo= Array.from(document.querySelectorAll('input[name="equipo[]"]:checked'));
         const errorEquipo = document.getElementById("errorCheckbox");
 
         camposAValidar.forEach(({campoId, errorId, mensaje}) => {
@@ -26,7 +26,7 @@ document.getElementById("main-content").addEventListener("click", (e) => {
                 registroValido = false;
             }
         });
-        if (!validaRadioButton(tipo_incidente, errorIncidente)){
+        if (!validaRadioButton(categoria, errorCategoria)){
             registroValido = false;
         }
 
@@ -52,7 +52,7 @@ function validaInput(campo, error, mensaje) {
 
 function validaRadioButton(campo, error) {
     if (!campo) {
-        error.textContent = "Debe seleccionar un tipo de incidente.";
+        error.textContent = "Debe seleccionar una categoría.";
         return false;
     } else {
         error.textContent = "";
