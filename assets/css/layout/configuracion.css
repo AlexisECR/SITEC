@@ -1,0 +1,14 @@
+.container-button-add{
+    display: flex;
+    width: 90%;
+    margin-bottom: 1rem;
+}
+
+.container-button-add button{
+    height: 3rem;
+    width: 12rem;
+    background: #214d7a;
+    justify-content: center;
+    align-items: center;
+
+}
