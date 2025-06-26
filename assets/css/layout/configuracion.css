@@ -10,5 +10,8 @@
     background: #214d7a;
     justify-content: center;
     align-items: center;
+}
 
+.fila-empleado td{
+    text-align: center;
 }
